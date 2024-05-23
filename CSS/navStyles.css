@@ -1,0 +1,20 @@
+.topnav{
+    background-color: antiquewhite;  
+   overflow:hidden;
+  }
+  .topnav a{
+      color:rgb(61,59,57);
+      float:left;
+      display:block;
+      text-decoration:none;
+      text-align: left;
+      padding:14px 16px;
+  }
+  .topnav a:hover{
+      color: #373737;
+      background-color: azure;
+      text-decoration: none;
+  }
+  .topnav-right{
+      float:right;
+  }
