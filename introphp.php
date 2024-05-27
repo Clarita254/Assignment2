@@ -53,62 +53,71 @@ print "Today is:".date('l,F jS Y');
 print '<br>';//Using HTML to break a line 
 
 $fname ="Alex Okama";//Declaration of a Variable or String [or a (group of)word]
-print $fname;
-//Start from here
+
 $yob=2006;//Creating (Declaring) a php variable(integer)
+
+ print $user_dob = $yob ."-05-27";
+ print '<br>';//Using HTML to break a line 
+print $fname;
 print '<br>';//Using HTML to break a line 
 
-$user_dob = $yob . "-05-21";
 
-    print $fname;
-    print '<br>'; //Using HTML to break  a line
-    
-    // print $user_dob;
-    
-    print '<br>'; //Using HTML to break  a line
-    $age = date('Y') - $yob;
+print $user_dob;
+print '<br>';//Using HTML to break a line 
 
-    $birthdate = new DateTime($user_dob);
-    $today = new DateTime('today');
+$age=date('Y')-$yob;//Php variable
 
-    $interval = $birthdate->diff($today);
+$birthdate=new DateTime($user_dob);
+$today=new DateTime('today');
 
-    // echo '<pre>';
-    // print_r($interval);
-    // echo '</pre>';
-    
-    print $fname . " was born on " . date('l, F jS Y', strtotime($user_dob));
-    print '<br>'; //Using HTML to break  a line
-    print $fname . " is " . $interval->y . " years, " . $interval->m . " months, and " . $interval->d . " days old.";
-    
-    print '<br>'; //Using HTML to break  a line
-    $adult_age = 18;
+$interval= $birthdate->diff($today);//interval creates an array to store difference between birthdate and today
 
-    if($interval->y >= $adult_age){
-        print $fname . " is an adult"; //{} event in block will happen if the condition is true
-    }else{
-        print $fname . " is NOT an adult"; //{} event in block will happen if the condition is false
-    }
-    print '<br>'; //Using HTML to break  a line
-    
-    
-    //Variable Characteristics
-    
-    $lname = 'Okama'; // $lname >< $Lname
-    
-    print "His last name is $lname";
-  
-    print '<br>'; //Using HTML to break  a line
-    
-    print 'His last name is ' . $lname;
-    
-    print '<br>'; //Using HTML to break  a line
-    
-    $pers['lname'] = "Okama";
-    print $pers['lname'];
-    
-    print '<br>'; //Using HTML to break  a line
-    define('lname', 'Okama');
-    print lname;
+//echo '<pre';
+//print_r($interval);
+//echo '</pre';
+
+//Dynamic content
+print $fname. "was born on " . date('l,F jS Y',strtotime($user_dob));
+
+print '<br>';//Using HTML to break a line 
+
+//Dynamic content
+print $fname ." is ".$interval->y ." years old " . 
+$interval -> m . " months,and " . $interval->d . "days. ";
+
+print '<br>';//Using HTML to break a line 
+
+//Condition
+$adult_age=18;
+if($interval->y >=$adult_age){
+    print $fname. " is an adult";//{}event in  block will happen if the condition is true
+}else{
+    print $fname. " is NOT an adult";//{}event in  block will happen if the condition is false
+}
+print '<br>';//Using HTML to break a line 
 
 
+//N/B We concatinate a string using a dot
+//variable Characteristics
+$lname= "Okama";//$lname is different from $Lname 
+
+print "His last name is $lname";//You can print the last name without concatinating ,If it was declared with double quotes/single quotes- the output wil be  His last name is Okama(method 1)
+
+print '<br>';//Using HTML to break a line 
+
+print 'His last name is . $lname';//The output will be His last name is $lname when you use single quotes therefore  you have to concatinate(method 2)
+
+print 'His last name is . $lname';
+print '<br>';//Using HTML to break a line 
+
+
+$pers['lname']="Okama";// Declaring variable using an array(method 3)
+print $pers['lname'];//Displaying the content in the array
+
+print '<br>';//Using HTML to break a line 
+
+define('lname','Okama');//(method 4)
+print lname;//print the lname (Identifier) without $ sign
+
+
+?>
